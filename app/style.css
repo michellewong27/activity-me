@@ -1,0 +1,22 @@
+.activities-container{
+  margin: 0 auto;
+
+}
+
+.activities {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.activity {
+  width: 45%;
+  margin: 10px;
+  padding: 40px;
+  border: 2px solid gray;
+  list-style-type: none;
+}
+
+img {
+  height: 60%;
+  width: 30%;
+}
