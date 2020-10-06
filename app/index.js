@@ -31,20 +31,26 @@ let activities = [
 ]
 
 const parentUl = document.getElementsByClassName("activities")[0];
+const title = document.getElementsByClassName("title")[0];
+const addActivityBtn = document.createElement('button');
+addActivityBtn.innerText = "Add activity"
+title.appendChild(addActivityBtn);
 
-function changeScore(event) {
-  let parentLi = event.target.parentNode;
-  let span = parentLi.querySelector("span");
-  let score = event.target.dataset.purpose === "increase" ? parseInt(span.innerText) + 1 : parseInt(span.innerText) - 1 ;
-  span.innerText = score;
-}
-
-parentUl.addEventListener("click", function(event){
-  console.log(event.target)
-  if(event.target.dataset.purpose === "increase" || event.target.dataset.purpose === "decrease"){
-    changeScore(event);
-  }
+addActivityBtn.addEventListener("click", function(e){
+  createForm(e);
+  addActivityBtn.remove();
 })
+
+function createForm(){
+  const form = document.createElement('form')
+  form.className = "addActivityForm";
+  form.innerHTML = `
+  <input type="text" placeholder="Activity"/>
+  <input type="text" placeholder="Image"/>
+  <input type="submit"/>
+`
+  title.appendChild(form);
+}
 
 activities.forEach(function (activity) {
   let newLi = document.createElement("li");
@@ -59,6 +65,16 @@ activities.forEach(function (activity) {
   parentUl.append(newLi);
 })
 
-let upVoteBtns = document.getElementsByClassName("upVote");
-let upVotes = Array.from(upVoteBtns);
+function changeScore(event) {
+  let parentLi = event.target.parentNode;
+  let span = parentLi.querySelector("span");
+  let score = event.target.dataset.purpose === "increase" ? parseInt(span.innerText) + 1 : parseInt(span.innerText) - 1 ;
+  span.innerText = score;
+};
+
+parentUl.addEventListener("click", function(event){
+  if(event.target.dataset.purpose === "increase" || event.target.dataset.purpose === "decrease"){
+    changeScore(event);
+  }
+});
 
