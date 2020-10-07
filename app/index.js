@@ -33,26 +33,39 @@ let activities = [
 const parentUl = document.getElementsByClassName("activities")[0];
 const title = document.getElementsByClassName("title")[0];
 const addActivityBtn = document.createElement('button');
+addActivityBtn.dataset.purpose = "form";
 addActivityBtn.innerText = "Add activity"
 title.appendChild(addActivityBtn);
 
 addActivityBtn.addEventListener("click", function(e){
-  createForm(e);
   addActivityBtn.remove();
+  createForm(e);
 })
 
-function createForm(){
+function createForm(e){
   const form = document.createElement('form')
-  form.className = "addActivityForm";
+  form.dataset.purpose = "addActivityForm";
   form.innerHTML = `
-  <input type="text" placeholder="Activity"/>
-  <input type="text" placeholder="Image"/>
-  <input type="submit"/>
-`
+  <input type="text" placeholder="Activity" name="name"/>
+  <input type="text" placeholder="Image" name="img"/>
+  <input type="submit" data-purpose="submitActivity"/>
+  `;
   title.appendChild(form);
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    let activity = {
+      name: e.target.name.value,
+      img: e.target.img.value,
+      score: 0
+    }
+    addActivity(activity);
+    form.remove();
+    title.appendChild(addActivityBtn);
+  });
 }
 
-activities.forEach(function (activity) {
+function addActivity(activity) {
   let newLi = document.createElement("li");
   newLi.className = "activity";
   newLi.innerHTML = `
@@ -63,7 +76,9 @@ activities.forEach(function (activity) {
   <button class="downVote" data-purpose="decrease">Down Vote</button>
 `;
   parentUl.append(newLi);
-})
+}
+
+activities.forEach(addActivity)
 
 function changeScore(event) {
   let parentLi = event.target.parentNode;
