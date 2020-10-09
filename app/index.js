@@ -3,32 +3,15 @@
 //   `https://developer.nps.gov/api/v1/parks?parkCode=acad&api_key=${key}`;
 // }
 
-let activities = [
-  {
-    id: 1,
-    name: "Swimming",
-    img: "https://i.insider.com/5d3b4de936e03c29354a8d38?width=600&format=jpeg&auto=webp",
-    score: 0
-  },
-  {
-    id: 2,
-    name: "Hiking",
-    img: "https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/topic_centers/2019-8/couple-hiking-mountain-climbing-1296x728-header.jpg?w=1155&h=1528",
-    score: 0
-  },
-  {
-    id: 3,
-    name: "Shopping",
-    img: "https://img2.10bestmedia.com/static/img/placeholder-shopping.jpg",
-    score: 0
-  },
-  {
-    id: 4,
-    name: "Golfing",
-    img: "https://rothmanortho.com/images/stories/flexicontent/l_shutterstock_331295318_optimized.jpg" ,
-    score: 0
-  }
-]
+function getActivities(){
+  fetch(`http://localhost:3000/activities`)
+  .then(function(body){return body.json()})
+  .then(function(activities){
+    //addActivity is acting as callback function
+    activities.forEach(addActivity)
+  })
+}
+
 
 const parentUl = document.getElementsByClassName("activities")[0];
 const title = document.getElementsByClassName("title")[0];
