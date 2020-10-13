@@ -3,6 +3,8 @@
 //   `https://developer.nps.gov/api/v1/parks?parkCode=acad&api_key=${key}`;
 // }
 
+// const e = require("express");
+
 function getActivities(){
   fetch(`http://localhost:3000/activities`)
   .then(function(body){return body.json()})
@@ -10,8 +12,21 @@ function getActivities(){
     //addActivity is acting as callback function
     activities.forEach(addActivity)
   })
-}
+};
+getActivities();
 
+function persistScore(event){
+  fetch(`http://localhost:3000/activities/${event.target.dataset.id}`, {
+    method:"PATCH",
+    headers:{
+      "content-type": "application/json",
+      accepts: "application/json"
+    },
+    body: JSON.stringify({ score: event.target.dataset.score})
+  })
+  // .then(function(response){return response.json})
+  // .then(function(data){changeScore(event)})
+}
 
 const parentUl = document.getElementsByClassName("activities")[0];
 const title = document.getElementsByClassName("title")[0];
@@ -55,24 +70,26 @@ function addActivity(activity) {
   <h3>${activity.name}</h3>
   <h4>Score: <span>${activity.score}</span> </h4>
   <img alt="" src=${activity.img} />
-  <button class="upVote" data-purpose="increase">Up Vote</button>
-  <button class="downVote" data-purpose="decrease">Down Vote</button>
+  <button class="upVote" data-purpose="increase" data-id=${activity.id} data-score=${activity.score}>Up Vote</button>
+  <button class="downVote" data-purpose="decrease" data-id=${activity.id} data-score=${activity.score}>Down Vote</button>
 `;
   parentUl.append(newLi);
 }
 
-activities.forEach(addActivity)
+// activities.forEach(addActivity)
 
 function changeScore(event) {
   let parentLi = event.target.parentNode;
   let span = parentLi.querySelector("span");
   let score = event.target.dataset.purpose === "increase" ? parseInt(span.innerText) + 1 : parseInt(span.innerText) - 1 ;
+  event.target.dataset.score = score;
   span.innerText = score;
 };
 
 parentUl.addEventListener("click", function(event){
   if(event.target.dataset.purpose === "increase" || event.target.dataset.purpose === "decrease"){
     changeScore(event);
+    persistScore(event);
   }
 });
 
