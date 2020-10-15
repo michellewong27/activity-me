@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Swimming",
       "img": "https://i.insider.com/5d3b4de936e03c29354a8d38?width=600&format=jpeg&auto=webp",
-      "score": "6"
+      "score": 2
     },
     {
       "id": 2,
@@ -22,6 +22,30 @@
       "id": 4,
       "name": "Golfing",
       "img": "https://rothmanortho.com/images/stories/flexicontent/l_shutterstock_331295318_optimized.jpg",
+      "score": 0
+    },
+    {
+      "id": 5,
+      "name": "Flag Football",
+      "img": "https://assets.usafootball.com/cms/2019-09/NFL_FLAG_pool_play.jpg",
+      "score": "2"
+    },
+    {
+      "id": 6,
+      "name": "Movie Marathon",
+      "img": "https://www.reynolds.k12.or.us/sites/default/files/styles/gallery500/public/imageattachments/glenfair/page/17651/movie-night-clip-art-08.png?itok=6cetPTb5",
+      "score": 0
+    },
+    {
+      "id": 7,
+      "name": "Walk the Beach",
+      "img": "https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/beach-walk-at-sunset-daniel-hagerman.jpg",
+      "score": 0
+    },
+    {
+      "id": 8,
+      "name": "Bike Ride",
+      "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/female-mountain-bikers-riding-on-forest-road-on-royalty-free-image-1593550274.jpg",
       "score": 0
     }
   ]

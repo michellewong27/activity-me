@@ -9,7 +9,6 @@ function getActivities(){
   fetch(`http://localhost:3000/activities`)
   .then(function(body){return body.json()})
   .then(function(activities){
-    //addActivity is acting as callback function
     activities.forEach(addActivity)
   })
 };
@@ -24,8 +23,27 @@ function persistScore(event){
     },
     body: JSON.stringify({ score: event.target.dataset.score})
   })
+  //for pessimistic rendering ->
   // .then(function(response){return response.json})
   // .then(function(data){changeScore(event)})
+}
+
+
+function addToActivities(activity){
+  fetch(`http://localhost:3000/activities`, {
+    method:"POST",
+    headers:{
+      "content-type":"application/json",
+      "accepts": "application/json"
+    },
+    body: JSON.stringify({
+      id: activity.id,
+      name: activity.name,
+      img: activity.img,
+      score: activity.score
+    })
+  })
+  addActivity(activity);
 }
 
 const parentUl = document.getElementsByClassName("activities")[0];
@@ -52,18 +70,22 @@ function createForm(e){
 
   form.addEventListener("submit", function(e){
     e.preventDefault();
+    let liCount = document.querySelectorAll("#activities li").length;
+    let id = liCount + 1;
     let activity = {
+      id: id,
       name: e.target.name.value,
       img: e.target.img.value,
       score: 0
     }
-    addActivity(activity);
+    addToActivities(activity);
     form.remove();
     title.appendChild(addActivityBtn);
   });
 }
 
 function addActivity(activity) {
+  console.log(activity)
   let newLi = document.createElement("li");
   newLi.className = "activity";
   newLi.innerHTML = `
@@ -75,8 +97,6 @@ function addActivity(activity) {
 `;
   parentUl.append(newLi);
 }
-
-// activities.forEach(addActivity)
 
 function changeScore(event) {
   let parentLi = event.target.parentNode;
