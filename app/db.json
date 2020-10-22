@@ -1,0 +1,60 @@
+{
+  "activities": [
+    {
+      "id": 1,
+      "name": "Swimming",
+      "img": "https://i.insider.com/5d3b4de936e03c29354a8d38?width=600&format=jpeg&auto=webp",
+      "score": 2,
+      "description": "Head to a local pool with friends an enjoy the day there"
+    },
+    {
+      "id": 2,
+      "name": "Hiking",
+      "img": "https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/topic_centers/2019-8/couple-hiking-mountain-climbing-1296x728-header.jpg?w=1155&h=1528",
+      "score": 0,
+      "description": "Lookup some trails nearby. Be sure to bring water!"
+    },
+    {
+      "id": 3,
+      "name": "Shopping",
+      "img": "https://img2.10bestmedia.com/static/img/placeholder-shopping.jpg",
+      "score": 0,
+      "description": "Go to the mall! You never know what deals you'll find."
+    },
+    {
+      "id": 4,
+      "name": "Golfing",
+      "img": "https://rothmanortho.com/images/stories/flexicontent/l_shutterstock_331295318_optimized.jpg",
+      "score": 0,
+      "description" : "Boys day golfing"
+    },
+    {
+      "id": 5,
+      "name": "Flag Football",
+      "img": "https://assets.usafootball.com/cms/2019-09/NFL_FLAG_pool_play.jpg",
+      "score": "2",
+      "description": "Call up a number of friends to get a game of flag football going!"
+    },
+    {
+      "id": 6,
+      "name": "Movie Marathon",
+      "img": "https://www.reynolds.k12.or.us/sites/default/files/styles/gallery500/public/imageattachments/glenfair/page/17651/movie-night-clip-art-08.png?itok=6cetPTb5",
+      "score": 0,
+      "description": "Netflix and chill kind of night? How could you go wrong!"
+    },
+    {
+      "id": 7,
+      "name": "Walk the Beach",
+      "img": "https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/beach-walk-at-sunset-daniel-hagerman.jpg",
+      "score": 0,
+      "description": "If you live by any beaches and want to be in the gret outdoors, take a walk on the sand and listen to the peaceful sounds of the ocean."
+    },
+    {
+      "id": 8,
+      "name": "Bike Ride",
+      "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/female-mountain-bikers-riding-on-forest-road-on-royalty-free-image-1593550274.jpg",
+      "score": 0,
+      "description": "Get moving! Go on a bike ride with some friends."
+    }
+  ]
+}
