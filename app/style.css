@@ -9,14 +9,110 @@
 
 .activity {
   width: 60%;
+  height: 30%;
   margin: 10px;
-  padding: 40px;
+  padding: 20px 60px;
   border: 2px solid gray;
   list-style-type: none;
 }
 
 img {
-  height: 50%;
-  width: 30%;
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
+.upVote {
+  margin: 10px 0px;
+  float: left;
+  border: black;
+  font-weight: bold;
+  border-style: hidden;
+  background-color: white;
+}
+
+.downVote {
+  margin: 10px;
+  float: left;
+  border: black;
+  font-weight: bold;
+  border-style: hidden;
+  background-color: white;
+}
+
+#header {
+   background-color: #66CCFF;
+   color: white;
+   text-align: center;
+   padding: 10px;
+}
+
+body {
+  background-color: #EEEEEE;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#container {
+  background-color: white;
+/* to center the entire page */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#content {
+  padding: 10px;
+
+}
+
+#nav ul {
+  background-color: burlywood;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+#nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+#nav li {
+  float: left;
+}
+
+#nav li a:hover {
+  background-color: white;
+  color: burlywood;
+}
+
+#main {
+  width: 100%;
+}
+
+#footer {
+  /* must be clear of any floating elements b4 we display ourselves (past all floating elements then display) */ 
+  clear: both;
+  padding: 10px;
+  background-color: #999999;
+  color: white;
+  text-align: center;
+}
+
+.selected {
+  font-weight: bold;
+}
+
+.addActivityBtn {
+  border: none;
+  background-color: white;
+  font-weight: bold;
+}

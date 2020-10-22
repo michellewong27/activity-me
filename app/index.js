@@ -49,11 +49,12 @@ function addToActivities(activity) {
 }
 
 const parentUl = document.getElementsByClassName("activities")[0];
-const title = document.getElementsByClassName("title")[0];
+const activityContainter = document.getElementsByClassName("activities-container")[0];
 const addActivityBtn = document.createElement("button");
 addActivityBtn.dataset.purpose = "form";
+addActivityBtn.className = "addActivityBtn";
 addActivityBtn.innerText = "Add activity";
-title.appendChild(addActivityBtn);
+activityContainter.insertBefore(addActivityBtn, activityContainter.childNodes[0]);
 
 addActivityBtn.addEventListener("click", function (e) {
   addActivityBtn.remove();
@@ -69,7 +70,7 @@ function createForm(e) {
   <input type="text" placeholder="Description" name="description" />
   <input type="submit" data-purpose="submitActivity"/>
   `;
-  title.appendChild(form);
+  activityContainter.insertBefore(form, activityContainter.childNodes[0]);
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -84,7 +85,7 @@ function createForm(e) {
     };
     addToActivities(activity);
     form.remove();
-    title.appendChild(addActivityBtn);
+    activityContainter.insertBefore(addActivityBtn, activityContainter.childNodes[0]);
   });
 }
 
@@ -95,8 +96,8 @@ function addActivity(activity) {
   newLi.innerHTML = `
   <h3>${activity.name}</h3>
   <h4>${activity.description}</h4>
-  <h4>Score: <span>${activity.score}</span> </h4>
   <img alt="" src=${activity.img} />
+  <h4 id="score">Score: <span>${activity.score}</span> </h4>
   <button class="upVote" data-purpose="increase" data-id=${activity.id} data-score=${activity.score}>Up Vote</button>
   <button class="downVote" data-purpose="decrease" data-id=${activity.id} data-score=${activity.score}>Down Vote</button>
 `;

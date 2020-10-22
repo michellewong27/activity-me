@@ -26,7 +26,7 @@
       "name": "Golfing",
       "img": "https://rothmanortho.com/images/stories/flexicontent/l_shutterstock_331295318_optimized.jpg",
       "score": 0,
-      "description" : "Boys day golfing"
+      "description": "Boys day golfing"
     },
     {
       "id": 5,
@@ -55,6 +55,13 @@
       "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/female-mountain-bikers-riding-on-forest-road-on-royalty-free-image-1593550274.jpg",
       "score": 0,
       "description": "Get moving! Go on a bike ride with some friends."
+    },
+    {
+      "id": 9,
+      "name": "Picnic in a park",
+      "img": "https://previews.123rf.com/images/foodandmore/foodandmore1808/foodandmore180800062/106187200-gourmet-picnic-lunch-under-a-tree-in-a-park-laid-out-on-a-wooden-slatted-table-with-a-hamper-bread-c.jpg",
+      "score": 0,
+      "description": "Grab some food and bring it to the park for a nice picnic on the grass!"
     }
   ]
 }
