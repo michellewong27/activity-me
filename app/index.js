@@ -42,19 +42,24 @@ function addToActivities(activity) {
       name: activity.name,
       img: activity.img,
       score: activity.score,
-      description: activity.description
+      description: activity.description,
     }),
   });
   addActivity(activity);
 }
 
 const parentUl = document.getElementsByClassName("activities")[0];
-const activityContainter = document.getElementsByClassName("activities-container")[0];
+const activityContainter = document.getElementsByClassName(
+  "activities-container"
+)[0];
 const addActivityBtn = document.createElement("button");
 addActivityBtn.dataset.purpose = "form";
 addActivityBtn.className = "addActivityBtn";
 addActivityBtn.innerText = "Add activity";
-activityContainter.insertBefore(addActivityBtn, activityContainter.childNodes[0]);
+activityContainter.insertBefore(
+  addActivityBtn,
+  activityContainter.childNodes[0]
+);
 
 addActivityBtn.addEventListener("click", function (e) {
   addActivityBtn.remove();
@@ -68,7 +73,7 @@ function createForm(e) {
   <input type="text" placeholder="Activity" name="name"/>
   <input type="text" placeholder="Image" name="img"/>
   <input type="text" placeholder="Description" name="description" />
-  <input type="submit" data-purpose="submitActivity"/>
+  <input type="submit" data-purpose="submitActivity" id="submitActivity"/>
   `;
   activityContainter.insertBefore(form, activityContainter.childNodes[0]);
 
@@ -81,11 +86,14 @@ function createForm(e) {
       name: e.target.name.value,
       img: e.target.img.value,
       score: 0,
-      description: e.target.description.value
+      description: e.target.description.value,
     };
     addToActivities(activity);
     form.remove();
-    activityContainter.insertBefore(addActivityBtn, activityContainter.childNodes[0]);
+    activityContainter.insertBefore(
+      addActivityBtn,
+      activityContainter.childNodes[0]
+    );
   });
 }
 

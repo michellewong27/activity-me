@@ -25,19 +25,23 @@ img {
 .upVote {
   margin: 10px 0px;
   float: left;
-  border: black;
-  font-weight: bold;
-  border-style: hidden;
   background-color: white;
+  border: solid black ;
+  padding: 2px 10px;
+  border-radius: 10px 20px 10px;
+  font-weight: bold;
+  border-width: 2px;
 }
 
 .downVote {
   margin: 10px;
   float: left;
-  border: black;
-  font-weight: bold;
-  border-style: hidden;
   background-color: white;
+  border: solid black ;
+  padding: 2px 10px;
+  border-radius: 10px 20px 10px;
+  font-weight: bold;
+    border-width: 2px;
 }
 
 #header {
@@ -112,7 +116,18 @@ a {
 }
 
 .addActivityBtn {
-  border: none;
   background-color: white;
+  border: solid black ;
+  padding: 2px 10px;
+  border-radius: 10px 20px 10px;
   font-weight: bold;
+  border-width: 2px;
+}
+
+#submitActivity {
+  background-color: white;
+  border: solid black ;
+  padding: 2px 10px;
+  border-radius: 10px 20px 10px;
+  border-width: 2px;
 }
